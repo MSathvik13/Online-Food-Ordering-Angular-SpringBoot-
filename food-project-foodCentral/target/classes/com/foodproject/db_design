@@ -1,0 +1,40 @@
+create table food {
+	food_id varchar(4) primary key,
+	food_name varchar(20) not null,
+	food_origin varchar(20),
+	veg_nonveg varchar(10),
+	food_price numeric(4,2) not null,
+	constraint chk_veg_nonveg check(veg_nonveg in('veg', 'non-veg'))
+}
+
+desc food;
+
+create table restaurant(
+	restaurant_id varchar(4) primary key, 
+	restaurant_name varchar(20) not null,
+	locality varchar(20) not null,
+	food_id varchar(4) references food(food_id)
+);
+
+desc restaurant;
+
+create table users(
+	user_id varchar(4) primary key,
+	user_name varchar(20) not null,
+	user_password varchar(20) not null,
+	address varchar(30) not null,
+	user_phone numeric(10) not null,
+	email varchar(30) not null
+);
+
+desc users;
+
+create table orders(
+	order_id varchar(4) primary key,
+	order_amount numeric(4,2) not null,
+	user_id varchar(4) references users(user_id),
+	food_id varchar(4) references food(food_id),
+	restaurant_id varchar(4) references restaurant(restaurant_id)
+);
+
+desc orders;
