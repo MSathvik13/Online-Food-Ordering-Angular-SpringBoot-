@@ -1,0 +1,147 @@
+body{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1{
+
+  font-family: 'Montserrat-Black', 'Montserrat', sans-serif;
+  font-size: 3rem;
+  line-height: 1.5;
+  padding-bottom: 2%;
+}
+
+.container-fluid{
+  padding: 3% 12%;
+
+}
+
+/* title section */
+
+.navbar{
+  padding: 0 0 5%;
+}
+
+.navbar-brand{
+  color: #fcbf1e;
+  font-size: 1.75rem;
+}
+
+.navbar-toggler{
+  background-color: #2f87c2;
+}
+
+.nav-item{
+
+  padding: 0 18px;
+}
+
+.nav-link{
+  color: white;
+  font-size: 1.18rem;
+  font-family: 'Montserrat-Light', sans-serif;
+}
+
+.btn-outline-light:hover{
+  color: black;
+}
+
+#title{
+  background-color: #900c3f;
+  color: white;
+}
+
+#titleImg{
+  border-radius: 5%;
+  margin-top: 5%;
+  /* transform: rotate(18deg); */
+  width: 70%;
+}
+
+/* title's Carousel */
+
+.carousel-item{
+  background-color: #900c3f;
+  height: 200px;
+  padding: auto 10%;
+}
+
+.carouselInd{
+  padding: 0;
+}
+
+/* features section */
+
+.title-btn{
+  margin:  5% auto;
+}
+
+.feature-box{
+  padding: 5% 5%;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-align: center;
+}
+
+ .feature-icon{
+   color: #72ccef;
+   padding: 2%;
+   transition: 0.5s all ease-in;
+ }
+
+ .feature-icon:hover{
+   color: #43baf1;
+   transform: rotate(360deg) scale(1.2);
+ }
+
+.feature-para{
+  color: #8f8f8f;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+/* feedback Carousel */
+
+
+
+/* footer Section */
+
+footer{
+  background-color: black;
+  color: #fff;
+}
+
+.footerRules{
+  background-color: #8c8b8b;
+  border: 0 1px 0 0;
+  width: 50%;
+}
+
+.footerHeading{
+  text-align: center;
+}
+
+.footerLists{
+  list-style-type: none;
+  margin-left: 12%;
+}
+
+li{
+  padding: 0.5rem 0;
+}
+
+a:link{
+  color: white;
+}
+
+a:visited{
+  color: white;
+}
+
+
+#copyrights{
+  font-size: 0.82rem;
+  margin-bottom: 0;
+  margin-top: 2rem;
+  padding-bottom: 0;
+  text-align: center;
+}

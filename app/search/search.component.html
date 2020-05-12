@@ -1,0 +1,67 @@
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-md-3">
+
+    </div>
+
+    <!-- Search input box -->
+    <div class="col-md-3">
+        <form>
+          <div class="form-group">
+            <input
+              ngModel
+              name="searchItem"
+              #searchItem="ngModel"
+              id="searchItem"
+              type="text"
+              class="form-control"
+              placeholder="eg: Truffles"
+            >
+
+          </div>
+
+        </form>
+    </div>
+
+    <div class="col-md-3">
+      <button class="btn btn-md btn-outline-danger mr-3 search-btn" (click)="handleSearchRestaurant(searchItem)">
+        <i class="fas fa-search"></i> Search</button>
+    </div>
+
+  </div>
+
+
+  <!-- return data from db after search -->
+  <div *ngIf="getResponse ?.restaurantName">
+
+    <!-- <div *ngFor="let item of getResponse; let i = index"> -->
+
+      <div class="row m-4 text-center">
+
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6 text-center ">
+          <div class="card" style="width: 25rem; height: 10rem; margin-bottom:2rem; ">
+
+              <div class="card-body">
+                  <h4 class="card-title">{{getResponse.restaurantName}}</h4>
+                  <img src="..." class="img-fluid" alt="Restaurant-photo">
+                  <hr noshade="">
+                  <span class="card-link" style="width: 60%;">{{getResponse.locality}}</span>
+                  <button class="btn-sm btn-dark card-link text-white" style="width: 30%;">View Menu</button>
+              </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-3"></div>
+
+      </div>
+
+    <!-- </div> -->
+
+  </div>
+
+</div>

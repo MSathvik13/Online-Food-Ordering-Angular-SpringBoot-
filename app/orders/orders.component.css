@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+}
+
+.panel-title {
+  display: inline;
+  font-weight: bold;
+}
+
+.checkbox.pull-right {
+  margin: 0;
+}
+
+.pl-ziro {
+  padding-left: 0px;
+}
+
+
+footer {
+  background-color: black;
+  color: #fff;
+}
+
+.footerRules {
+  background-color: #8c8b8b;
+  border: 0 1px 0 0;
+  width: 50%;
+}
+
+.footerHeading {
+  text-align: center;
+}
+
+.footerLists {
+  list-style-type: none;
+  margin-left: 12%;
+}
+
+li {
+  padding: 0.5rem 0;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+#carouselBox {
+  text-align: center;
+}
+
+.title-btn {
+  margin: 5% auto;
+}
+
+.carouselInd {
+  padding: 0;
+}
+
+#copyrights {
+  font-size: 0.82rem;
+  margin-bottom: 0;
+  margin-top: 2rem;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+
+/*.mytable tbody tr:first-child td:nth-child(5) {*/
+  /* Styles goes here */

@@ -1,0 +1,136 @@
+<body>
+  <nav class=" shadow-lg navbar sticky-top navbar-dark" style="background-color:#5DADE2 ;">
+    <a class=" navbar-brand" id="appName" style="font-size: 50px; font-family: monospace; color: white; font-weight: bold;" title="Online Food Ordering Application" href="#!">Food Basket</a>
+    <ul class="nav justify-content-center">
+      <li class=" m-2 nav-item">
+        <a class=" nav-link font-weight-bold btn btn-outline-dark text-white text-monospace" href="/home">Home</a>
+      </li>
+      <li class=" m-2 nav-item">
+        <a class="nav-link font-weight-bold btn btn-outline-dark text-white text-monospace" href="/orders">Orders</a>
+      </li>
+      <!--
+  <li class=" m-2 shadow nav-item">
+    <a class="nav-link font-weight-bold btn btn-outline-dark btn-success text-monospace" href="http://localhost:9090/">Check-Out</a>
+  </li>-->
+    </ul>
+  </nav>
+
+  <div class="alert alert-success" style="font-size: 30px;"><strong>Welcome</strong>! {{userName}}</div>
+
+  <div class="Header">
+
+    <h1> Food Menu! </h1>
+    <h2>Experience the Exotic food by our MasterChefs!</h2>
+
+  </div>
+
+  <div class="card-deck" style="margin-left:50px; margin-right:50px; margin-top:50px; margin-bottom:50px;">
+
+    <div class="card" style="width:400px">
+      <img class="card-img" src="../../assets/img/Rotis.jpg" height="400" alt="Card image">
+      <div class="card-body">
+        <h4 class="card-title">Rotis</h4>
+        <p class="card-text">Choose from a wide varities of rotis</p>
+        <p class="card-footer"> Starting from Rs. 10</p>
+        <a href="http://localhost:4200/Rotis" class="btn" id="down">Explore..</a>
+      </div>
+    </div>
+    <div class="card" style="width:400px">
+      <img class="card-img" src="../../assets/img/Chicken.jpg" height="400" alt="Card image">
+      <div class="card-body">
+        <h4 class="card-title">Chicken Varieties</h4>
+        <p class="card-text">Chicken dishes you can't resist to eat...</p>
+        <p class="card-footer"> Starting from Rs. 200 </p>
+        <a href="http://localhost:4200/Chicken" class="btn"  id="down">Explore..</a>
+      </div>
+    </div>
+    <div class="card" style="width:400px">
+      <img class="card-img" src="../../assets/img/Rice.jpg" height="400" alt="Card image">
+      <div class="card-body">
+        <h4 class="card-title">Rice</h4>
+        <p class="card-text">The Rice items you must try</p>
+        <p class="card-footer"> Starting from Rs. 150 </p>
+        <a href="http://localhost:4200/Rice" class="btn btn" id="down">Explore..</a>
+      </div>
+    </div>
+    <div class="card" style="width:400px">
+      <img class="card-img" src="../../assets/img/Dessert.jpg" height="400" alt="Card image">
+      <div class="card-body">
+        <h4 class="card-title">Dessert</h4>
+        <p class="card-text" height="100%">The food endings we make great</p>
+        <p class="card-footer"> Starting from Rs. 100 </p>
+        <a href="http://localhost:4200/Desserts" class="btn" id="down">Explore..</a>
+
+      </div>
+    </div>
+  </div>
+
+
+  <a href="/home" class="btn btn-secondary">Home Page</a>
+  <!-- Footer section -->
+  <footer class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-md-3">
+
+        <div class="footerHeading">
+          About Us
+          <hr noshade="" class="footerRules">
+        </div>
+
+        <ul class="footerLists">
+          <li>
+            <a href="">Company</a>
+          </li>
+          <li>
+            <a href="/developersTeam">Teams</a>
+            <!-- About our team the skills used -->
+          </li>
+          <li>
+            <a href="/career">Career</a>
+            <!-- show "No openings right now..." Message here -->
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="col-md-3">
+
+        <div class="footerHeading">
+          Connect With Us
+          <hr noshade="" class="footerRules">
+        </div>
+
+        <ul class="footerLists">
+          <li>
+            <a href="/partners"> Business Partner</a>
+            <!-- just show a list of business partners like transport service providers, Social Presence enhancers,etc -->
+          </li>
+          <li>
+            <a href="/register-restaurant"> Add Your Restaurant</a>
+          </li>
+          <li>
+            <a href="/queries"> Help & Support (FAQ's)</a>
+            <!-- a list of questions and answers for general public -->
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="col-md-3">
+
+
+
+
+      </div>
+
+    </div>
+
+    <hr noshade="" class="footerRules">
+    <p id="copyrights">© Copyright 2020 Food Ordering</p>
+
+  </footer>
+
+  <a href="/home" class="btn btn-secondary">Home</a>
+</body>

@@ -1,0 +1,28 @@
+.invalidMessage{
+  border-width: 0;
+  color: red;
+  height: 1rem;
+  font-size: 0.85rem;
+}
+
+.feature-icon{
+  color: rgb(25, 110, 25);
+}
+
+label{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.3rem;
+}
+
+.form-control{
+  /* width: 70%; */
+  margin-bottom: 1.5rem;
+}
+
+.loginDiv {
+  background-color: aliceblue;
+  margin: 0;
+  padding: 3% 12%;
+}
+
+

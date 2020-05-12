@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Restaurant Registration</title>
+</head>
+<body>
+
+  <div class="login-box">
+
+    <h1>Registration</h1>
+    <form <!--[formGroup]="restaurantForm"-->>
+      <div class="textbox">
+        <input type="text" formControlName="restaurantName" placeholder="Restaurant Name" required>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                  <span class="font"> minimum length is required</span>
+                </div>
+        </div>
+
+        <div class="textbox">
+          <input type="text" formControlName="email" placeholder="Email" required>
+        </div>
+
+        <div class="textbox">
+          <input type="string" formControlName="contactNumber" placeholder="Contact Number" required>
+        </div>
+
+        <div class="textbox">
+          <input type="text" formControlName="locality" placeholder="locality" required>
+        </div>
+
+        <div class="textbox">
+          <input type="password" formControlName="password" placeholder="Password" required>
+        </div>
+
+        <input class="btn" type="button"  value="Register" (click)="onSubmit()" [disabled]="!restaurantForm.valid">
+
+        <!--div class="btn">
+          <button type="button" (click)="onSubmit()" [disabled]="!restaurantForm.valid">Submit</button>
+        </div-->
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#The:hover {
+  color: aqua;
+}
+
+.display-4 {
+  font-family: CloisterBlack BT;
+  color: #ccc;
+}
+
+body {
+  background: #1b1b2b;
+  padding-top: 75px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  margin: 0px;
+}
+
+h1 {
+  color: #c0c0c0;
+  background-position: absolute;
+  font-family: comic sans;
+  font-weight: 100;
+}
+
+h2 {
+  color: #c0c0c0;
+  background-position: absolute;
+  font-family: comic sans;
+  font-weight: 100;
+}
+
+.btn {
+  margin: 20px;
+  align-self: center;
+  color: black;
+  border: 1px solid black;
+  font-size: 20px;
+  font-family: impact;
+  text-decoration: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+  .btn:hover {
+    transform: 5s ease;
+  }
+    
+
+.footer {
+  font-size: 8px;
+  color: #fff;
+  clear: both;
+  display: block;
+  letter-spacing: 5px;
+  border: 1px solid #fff;
+  padding: 5px;
+  text-decoration: none;
+  width: 210px;
+  margin: auto;
+  margin-top: 400px;
+}
+
+.container-fluid {
+  height: 300px;
+  width: 500px;
+  background-color: #1b1b2b;
+  margin-left: 50px;
+}
+
+#down:hover {
+  -moz-box-shadow: 0 0 40px #ccc;
+  -webkit-box-shadow: 0 0 40px #ccc;
+  box-shadow: 0 0 40px #ccc;
+  color: red;
+}
+
+.container-fluid div[id^="Rotis"] {
+  width: 500px;
+  height: 200px;
+  background-image: url(../../assets/img/Rotis.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.container-fluid div[id^="Chicken Variety"] {
+  width: 500px;
+  height: 200px;
+  background-image: url(../../assets/img/Chicken.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.container-fluid div[id^="Salads"] {
+  width: 500px;
+  height: 200px;
+  background-image: url(../../assets/img/Rice.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.container-fluid div[id^="Dessert"] {
+  width: 500px;
+  height: 200px;
+  background-image: url(../../assets/img/Dessert.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.cards {
+  border: 20px solid blue;
+}

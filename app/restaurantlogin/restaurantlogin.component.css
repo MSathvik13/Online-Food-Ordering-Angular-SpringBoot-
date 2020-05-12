@@ -1,0 +1,61 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	/* background: url(../../assets/restaurant-reg.jpg) no repeat; */
+	background-size: cover;
+}
+
+.login-box{
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	color: whilte;
+}
+
+.login-box h1{
+	float: center;
+	font-size: 60px;
+	border-bottom: 6px solid;
+	margin-bottom: 30px;
+	padding: 20px 0;
+}
+
+.textbox{
+	width: 100%;
+	overflow: hidden;
+	font-size: 40px;
+	padding: 8px 0;
+	margin: 16px 0;
+	border-bottom: 1px solid ;
+}
+
+.textbox input{
+	border: none;
+	outline: none;
+	background: none;
+	color: black;
+	font-size: 25px;
+	width: 80%;
+	float: left;
+	margin: 0 10px;
+}
+
+.alertBox{
+        width: 100%;
+        overflow: hidden;
+        font-size: 20px;
+        color: red;
+        padding: 4px 0;
+}
+
+.btn{
+	width: 100%;
+	background: black;
+	color: white;
+	border:2px solid;
+    padding: 10px;
+    font-size: 20px;
+}

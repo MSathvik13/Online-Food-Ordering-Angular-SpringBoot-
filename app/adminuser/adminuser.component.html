@@ -1,0 +1,111 @@
+<div class="loginDiv" *ngIf="!checkLoggedIn()">
+
+  <h2 class="text-center">Welcome Admin,</h2>
+  <h5 class="text-center">Select one of the Below operations to make a change in our world.</h5>
+
+  <!-- Admin Input and event Buttons -->
+  <div class="row text-center ml-auto">
+
+    <div class="col">
+
+      <button class="btn btn-dark" (click)="findRestaurant(id)">Find Restaurant</button>
+
+    </div>
+
+  </div>
+
+  <div class="row text-center">
+
+    <div class="col-md-4">
+
+      <button class="btn btn-dark" (click)="findUser(id)">Find User</button>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <form>
+        <div class="form-group">
+
+              <input required
+							ngModel
+							name="id"
+							#id="ngModel"
+							id="id"
+							type="text"
+							class="form-control"
+							pattern="^\d[0-9]$"
+              placeholder="User/Restaurant-ID...">
+
+        </div>
+      </form>
+      <div class="alert alert-danger" *ngIf="id.invalid && ( id.dirty || id.touched)">
+        Enter a User/Restaurant-Id first!
+      </div>
+      <div class="alert alert-danger" *ngIf="getResponse == null">
+        User/Restaurant Not Found!
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <button class="btn btn-dark" (click)="removeUser(id)">Remove User</button>
+
+    </div>
+
+  </div>
+
+  <div class="row text-center">
+
+    <div class="col">
+
+      <button class="btn btn-dark" (click)="removeRestaurant(id)">Remove Restaurant</button>
+
+    </div>
+
+  </div>
+
+  <!-- User & Restaurant get data values from db -->
+  <div *ngIf="getResponse != null" style="background-color: grey;">
+    <!-- Display the User found -->
+    <div *ngIf="getResponse ?.userName">
+      <div class="row text-white text-center" style="background-color: black; padding: 2%;">
+        <div class="col-md-1">UserId </div>
+        <div class="col-md-2">Username </div>
+        <div class="col-md-3">Email address </div>
+        <div class="col-md-4">Address </div>
+        <div class="col-md-2">Mobile Number </div>
+      </div>
+
+      <div class="row text-white text-center" style="padding: 2%;">
+        <div class="col-md-1"> {{getResponse ?.userId}} </div>
+        <div class="col-md-2"> {{getResponse ?.userName}} </div>
+        <div class="col-md-3"> {{getResponse ?.email}} </div>
+        <div class="col-md-4"> {{getResponse ?.door_no}}, {{getResponse ?.locality}}, {{getResponse ?.city}} </div>
+        <div class="col-md-2"> {{getResponse ?.userPhone}} </div>
+      </div>
+    </div>
+
+    <!-- Display the Restaurant found -->
+     <div *ngIf="getResponse ?.restaurantName">
+      <div class="row text-white text-center" style="background-color: black; padding: 2%;">
+        <div class="col-md-2"> Restaurant-Id </div>
+        <div class="col-md-2"> Restaurant Name </div>
+        <div class="col-md-3"> Owner's Name </div>
+        <div class="col-md-2"> Phone Number</div>
+        <div class="col-md-3"> Area/Locality </div>
+      </div>
+
+      <div class="row text-white text-center" style="padding: 2%;">
+        <div class="col-md-2"> {{getResponse ?.restaurantId}} </div>
+        <div class="col-md-2"> {{getResponse ?.restaurantName}} </div>
+        <div class="col-md-3"> {{getResponse ?.ownerUserName}} </div>
+        <div class="col-md-2"> {{getResponse ?.restaurantPhone}} </div>
+        <div class="col-md-3"> {{getResponse ?.locality}} </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

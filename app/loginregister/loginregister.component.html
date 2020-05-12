@@ -1,0 +1,342 @@
+<div class="loginDiv" *ngIf="!checkLoggedIn()">
+
+  <div class="row">
+
+    <div class="col-4">
+          <h4>Welcome {{name}}</h4>
+    </div>
+
+    <div class="col-4">
+
+    </div>
+
+    <div class="col-4">
+      <button class="btn btn-sm btn-outline-dark mr-0" (click)="viewProfile()">Your Profile</button>
+    </div>
+
+  </div>
+
+  <!-- User Profile View -->
+  <div *ngIf="profileView">
+
+    <div class="row text-white text-center" style="background-color: black; padding: 2%;">
+
+        <div class="col-md-2">Username </div>
+        <div class="col-md-3">Email address </div>
+        <div class="col-md-4">Address </div>
+        <div class="col-md-2">Mobile Number </div>
+      </div>
+
+      <div class="row text-white text-center" style="background-color: grey; padding: 2%;">
+
+        <div class="col-md-2"> {{name}} </div>
+        <div class="col-md-3"> {{email}} </div>
+        <div class="col-md-4"> {{house}}, {{locality}}, {{city}} </div>
+        <div class="col-md-2"> {{phoneNumber}} </div>
+      </div>
+
+  </div>
+
+</div>
+
+<div class="loginDiv" *ngIf="checkLoggedIn()">
+
+  <div class="container-fluid bg-light text-dark rounded">
+
+    <!-- Buttons -->
+    <div class="row m-3 ">
+
+      <div class="col-md-7 content-1">
+
+      </div>
+
+      <div class="col-md-5 m-0 p-0">
+
+        <div class=" m-0 p-0">
+          <button class="btn btn-md btn-dark mr-3" (click)="signInButton()">
+            <i class="fas fa-sign-in-alt"></i> Sign-in
+          </button>
+
+          <button type="button" class="btn btn-md btn-outline-secondary" (click)="signUpButton()">
+            <i class="fas fa-user-plus"></i> Register
+          </button>
+
+          <!-- Hide input fields -->
+          <span class="" *ngIf="isSignIn || isSignUp" style="margin-left: 2.2rem;">
+              <button (click)="hide()" class="btn btn-sm btn-danger" ><i class="far fa-times-circle"></i></button>
+          </span>
+          <!--  -->
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SIGN IN FORM -->
+    <div class="container-fluid" *ngIf="isSignIn">
+
+      <div class="row m-0 p-0">
+
+        <div class="col-md-7 align-middle ">
+
+          <div class="text-center" style="margin: 25px 0px;">
+              <h3>Back Already!</h3>
+              <h5> You could have at least finished that delicious meal you had ordered earlier😉 </h5>
+          </div>
+
+        </div>
+
+        <div class="col-md-4 bg-light ">
+
+          <form>
+            <div class="form-group">
+
+							<label>Enter E-mail:</label><br>
+
+              <input required
+							ngModel
+							name="EmailID"
+							#EmailID="ngModel"
+							id="EmailID"
+							type="email"
+							class="form-control"
+              placeholder="eg: johndoe@gmail.com">
+
+						</div>
+
+            <div *ngIf="EmailID.invalid && EmailID.touched">
+                <div *ngIf="EmailID.errors?.pattern" class="alert alert-danger">Invalid email!</div>
+                <div *ngIf="EmailID.errors?.required" class="alert alert-danger">Empty Fields not allowed</div>
+            </div>
+
+
+            <div class="form-group">
+
+              <label> Enter Password:</label><br>
+
+							<input required
+              ngModel
+              name="password"
+              #password="ngModel"
+              id="password"
+              type="password"
+              class="form-control"
+              minlength="5"
+              placeholder="Your password">
+
+            </div>
+
+            <div *ngIf="password.invalid && password.touched">
+              <div *ngIf="password.errors?.minlength" class="alert alert-danger">Minimum 5 letters expected!</div>
+              <div *ngIf="password.errors?.required" class="alert alert-danger">Password is Empty!</div>
+            </div>
+
+            <button class="btn btn-outline-success my-2 my-sm-0 content3" href="/admin" (click)="loginValidate(password, EmailID)">Log In</button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="showAlertInLogin">
+
+          <strong>Looks like some thing went wrong !</strong> {{messageLogin}}
+
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+      </div>
+
+    </div>
+
+    <!-- SIGN UP FORM -->
+    <div class="container-fluid" *ngIf="isSignUp">
+
+      <div class="row">
+
+        <div class="col-md-7  align-middle ">
+
+          <div class="text-center" style="margin: 100px 0px;">
+              <h3>Hello John,</h3>
+              <h5> Oh!! You are not the John we know.. Why don't you take a moment to tell us something about yourself?</h5>
+          </div>
+
+        </div>
+
+        <div class="col-md-5 bg-light">
+
+          <form>
+
+            <div class="form-group">
+
+              <label> Email:</label><br>
+
+              <input required
+                ngModel
+                name="emailid"
+                #emailid="ngModel"
+                id="emailid"
+                type="email"
+                class="form-control"
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                placeholder="eg: johndoe@gmail.com">
+
+            </div>
+
+            <div *ngIf="emailid.invalid && emailid.touched">
+              <div *ngIf="emailid.errors?.pattern" class="alert alert-danger">
+                Input doesn't match email format!
+              </div>
+              <div *ngIf="emailid.errors?.required" class="alert alert-danger">This field can't be Empty!</div>
+            </div>
+
+            <div class="form-group">
+
+              <label> User-name:</label><br>
+
+              <input required
+                ngModel
+                name="name"
+                #name="ngModel"
+                id="name"
+                type="text"
+                class="form-control"
+                placeholder="eg: 'algedonic-manish'">
+
+            </div>
+
+            <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+              Username can't be Empty!
+            </div>
+
+            <div class="form-group">
+
+              <label> Password</label><br>
+
+              <input required
+                ngModel
+                name="password"
+                #password="ngModel"
+                id="password"
+                type="password"
+                class="form-control"
+                minlength="5"
+                placeholder="password">
+            </div>
+
+            <div *ngIf="password.invalid && password.touched">
+              <div *ngIf="password.errors?.minlength" class="alert alert-danger">
+                Password too small! Use at least 5 letters</div>
+              <div *ngIf="password.errors?.required" class="alert alert-danger">
+                Pssword is a must!
+              </div>
+            </div>
+
+            <div class="form-group">
+
+              <label> House No.:</label><br>
+
+              <input required
+                ngModel
+                name="doorNum"
+                #doorNum="ngModel"
+                id="doorNum"
+                pattern="^#+[0-9]+[0-9]+[0-9]"
+                type="text"
+                class="form-control"
+                placeholder="eg: #007">
+
+            </div>
+
+            <div class="alert alert-danger" *ngIf="doorNum.invalid && (doorNum.dirty || doorNum.touched)">
+              We don't deliver at this House!
+            </div>
+
+            <div class="form-group">
+
+              <label> Street/Locality:</label><br>
+
+              <input required
+                ngModel
+                name="locality"
+                #locality="ngModel"
+                id="locality"
+                type="text"
+                class="form-control"
+                placeholder="eg: 2nd Cross, Continental">
+
+            </div>
+
+            <div class="alert alert-danger" *ngIf="locality.invalid && (locality.dirty || locality.touched)">
+              Come on! Even beggars have a street address!
+            </div>
+
+            <div class="form-group">
+
+              <label> City:</label><br>
+
+              <input required
+                ngModel
+                name="city"
+                #city="ngModel"
+                id="city"
+                type="text"
+                class="form-control"
+                placeholder="eg: Seattle">
+
+            </div>
+
+            <div class="alert alert-danger" *ngIf="city.invalid && (city.dirty || city.touched)">
+              Specify which city you live in!
+            </div>
+
+            <div class="form-group">
+
+              <label> Mobile-Number:</label><br>
+
+              <input required
+                ngModel
+                name="phone"
+                #phone="ngModel"
+                id="phone"
+                maxlength="10"
+                pattern="^\d{10}$"
+                type="text"
+                class="form-control"
+                placeholder="eg: 9874563210">
+
+            </div>
+
+            <div class="alert alert-danger" *ngIf="phone.invalid && phone.touched">
+              Please use a 10-digit Number!
+            </div>
+
+
+
+            <button class="btn btn-outline-success my-2 my-sm-0 content3" (click)="signupValidate(emailid, name, password, doorNum, locality, city, phone)" >Sign Up</button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="showAlert">
+
+        <strong>Looks like some thing went wrong !</strong> {{message}}
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+          <span aria-hidden="true">&times;</span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
